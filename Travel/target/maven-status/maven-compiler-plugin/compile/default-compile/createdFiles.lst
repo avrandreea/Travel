@@ -1,0 +1,12 @@
+com\travel\dao\AutocompleteDao.class
+com\travel\resources\TravelResourceList.class
+com\travel\TravelApplication$1.class
+com\travel\TravelConfiguration$RestConfig.class
+com\travel\client\Verifier.class
+com\travel\model\AutocompleteEntity.class
+com\travel\resources\TravelResourceAvailability.class
+com\travel\model\Whatever.class
+com\travel\TravelApplication.class
+com\travel\resources\TravelResourceBooking.class
+com\travel\TravelConfiguration.class
+com\travel\client\HttpClient.class

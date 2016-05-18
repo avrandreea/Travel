@@ -1,0 +1,30 @@
+<!-- Hotells List -->
+<article>
+
+    <ul class="hotelItemsContainer">
+        <li style="position: relative" class="hotelItem" ng-repeat="Hotel in Hotels.list.HotelListResponse.HotelList.HotelSummary track by $index">
+
+            <!-- Hotel image -->
+            <div class="hotel-img">
+                <img ng-src="http://images.travelnow.com/{{Hotel.thumbNailUrl}}" alt="Hotel thumbNail"/>
+            </div>
+            <!-- Hotel information -->
+            <div class="info" >
+                <h3 class="name">{{Hotel.name}}</h3>
+
+                <p class="star-rating rating-{{Hotel.hotelRating}}"></p>
+
+                <p class="lowRate">From <span class="price">{{Hotel.lowRate}}{{Hotel.rateCurrencyCode}}</span></p>
+
+                <p class="location">{{Hotel.city}} - {{Hotel.countryCode}}</p>
+
+                <p class="address">{{Hotel.address1}}</p>
+
+                <!--Short description-->
+                <!--<p style="text-align: left; font-style: oblique; color: #218b86; margin: 20px;">{{Hotel.shortDescription}}</p>-->
+            </div>
+            <!-- Hotel room list -->
+                <button class="details" ng-click="HotelsS.redirectRoAvailabilityPage($index)">More details</button>
+        </li>
+    </ul>
+</article>

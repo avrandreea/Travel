@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="travelApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Andreea's app</title>
+    <meta name="description" content="Andreea's first Travel app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- Header -->
+<header id="main_header" ng-header></header>
+
+<!-- Content -->
+<main id="main_content">
+    <section id="main_section" ng-view></section>
+</main>
+
+<!--Footer-->
+<!--<footer id="main_footer" ng-footer></footer>-->
+
+<!-- Script libraries -->
+
+<!--<script src="https://code.angularjs.org/1.4.5/angular.min.js"></script>-->
+<!--<script src="https://code.angularjs.org/1.4.5/angular-route.min.js"></script>-->
+<!--<script src="https://code.angularjs.org/1.4.5/angular-sanitize.min.js"></script>-->
+<!--<script src="assets/lib/bootstrap/javascripts/bootstrap.js"></script>-->
+<!--<script src="https://code.angularjs.org/1.4.5/angular-cookies.min.js"></script>-->
+<!--<script src="https://apis.google.com/js/client.js"></script>-->
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+<!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>-->
+
+<!-- Script libraries -->
+<script src="assets/lib/bootstrap/javascripts/bootstrap.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="https://code.angularjs.org/1.4.5/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.4.5/angular-route.min.js"></script>
+<script src="https://code.angularjs.org/1.4.5/angular-sanitize.min.js"></script>
+
+
+
+
+<script src="app.js"></script>
+<script src="app.route.js"></script>
+
+<!-- Directives -->
+<script src="app.shared_directives.js"></script>
+
+<!-- Controllers -->
+<script src="components/home/controller/HomeController.js"></script>
+<script src="components/list/controller/ListController.js"></script>
+<script src="components/availability/controller/AvailabilityController.js"></script>
+<script src="components/book/controller/BookingController.js"></script>
+
+<!-- Models -->
+<script src="components/list/models/ListModel.js"></script>
+<script src="components/list/models/HotelsModel.js"></script>
+<script src="components/availability/models/AvailabilityModel.js"></script>
+<script src="components/book/models/BookingModel.js"></script>
+
+<!-- Services -->
+<script src="components/list/services/ListServices.js"></script>
+<script src="components/availability/services/AvailabilityServices.js"></script>
+<script src="components/list/services/HotelsServices.js"></script>
+<script src="components/book/services/BookingService.js"></script>
+
+</body>
+</html>

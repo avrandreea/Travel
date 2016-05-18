@@ -1,0 +1,57 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+  adminConnectors:
+    - type: http
+      port: 8081
+
+database:
+    # the name of your JDBC driver
+    driverClass: com.mysql.jdbc.Driver
+
+    # the username
+    user: andreea
+
+    # the password
+    password: Happy123
+
+    # the JDBC URL
+    url: jdbc:mysql://localhost:3306/xtw_catalogs
+
+    # any properties specific to your JDBC driver:
+    properties:
+      charSet: UTF-8
+      hibernate.dialect: org.hibernate.dialect.MySQLInnoDBDialect
+
+#   # the minimum number of connections to keep open
+#   minSize: 8
+#
+#   # the maximum number of connections to keep open
+#   maxSize: 32
+#
+#   # whether or not idle connections should be validated
+#   checkConnectionWhileIdle: false
+
+# Logging settings.
+logging:
+
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+
+  # Logger-specific levels.
+  loggers:
+
+    # Sets the level for 'com.example.app' to DEBUG.
+    com.travel: DEBUG
+
+restConfig:
+  endpoint: http://api.ean.com/ean-services/rs/hotel/v3/
+  endpointhttps: https://book.api.ean.com/ean-services/rs/hotel/v3/
+  listPath: list
+  availPath: avail
+  bookingPath: res
+  cid: cid=55505
+  minorRev: minorRev=99
+  apiKey: apiKey=custom

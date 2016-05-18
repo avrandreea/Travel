@@ -1,0 +1,62 @@
+<article>
+
+    <div class="hotelInfo">
+        <h3 class="hotelInfo">{{Availability.hotelRoomAvailability.HotelRoomAvailabilityResponse.hotelName}}</h3>
+
+        <p style="margin-left: auto; margin-right: auto"
+           class="star-rating rating-{{Availability.Hotel.hotelRating}}"></p>
+
+        <p><img src="../../../../travel_frontend/assets/img/location.png" style="width: 17px;height: 17px;">
+            {{Availability.hotelRoomAvailability.HotelRoomAvailabilityResponse.hotelCity}}-{{Availability.hotelRoomAvailability.HotelRoomAvailabilityResponse.hotelCountry}}
+            {{Availability.hotelRoomAvailability.HotelRoomAvailabilityResponse.hotelAddress}}.</p>
+
+        <p></p>
+    </div>
+    <!-- Rooms -->
+    <div>
+        <div class="roomItem"
+             ng-repeat="Room in Availability.hotelRoomAvailability.HotelRoomAvailabilityResponse.HotelRoomResponse track by $index">
+
+            <!--<div>-->
+            <!--<img src={{Availability.images.RoomImages.RoomImage}}>-->
+            <!--</div>-->
+
+            <p class="roomTypeDescription">{{Room.roomTypeDescription}}</p>
+
+            <div>
+                <p class="bedChoise">Bed choices:</p>
+                    <p style="margin-left: 30px;" ng-repeat="Bed in Room.BedTypes.BedType">{{Bed.description}}</p>
+            </div>
+
+                <p class="priceInfo">Price:<span class="price">
+                    {{Room.RateInfos.RateInfo.ChargeableRateInfo['@total']}}
+
+                    {{Room.RateInfos.RateInfo.ChargeableRateInfo['@currencyCode']}}</span></p>
+
+                <p class="refundable" ng-if="!Room.RateInfos.RateInfo.nonRefundable">Refundable</p>
+
+                <p class="nonRefundable" ng-if="Room.RateInfos.RateInfo.nonRefundable">Non-refundable</p>
+
+                <button ng-click="AvailabilityS.redirectToBookingPage($index)">Book room</button>
+
+            <div>
+                <p>{{Room.RateInfos.RateInfo[0].cancellationPolicy}}</p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div style="display: inline-table" ng-repeat="image in  Availability.images.RoomImage">
+        <img src="{{image.url}}" alt="{{image.url}}">
+    </div>
+</article>
+<script>
+    window.onload = function () {
+        var elem = document.createElement('textarea');
+        elem.innerHTML = encoded;
+        var decoded = elem.value;
+        return textArea.elem;
+    }
+
+</script>

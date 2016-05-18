@@ -1,0 +1,121 @@
+<article class="bookingForm">
+    <div>
+        <h3 class="hotelInfo">{{Availability.hotelRoomAvailability.HotelRoomAvailabilityResponse.hotelName}}</h3>
+
+        <p style="margin-left: auto; margin-right: auto"
+           class="star-rating rating-{{Availability.Hotel.hotelRating}}"></p>
+        <hr>
+    </div>
+    <form class="bookingForm">
+        <fieldset>
+            <h4>Room details</h4>
+
+            <div ng-repeat="Room in List.roomGroup">
+                <h5>Room one</h5>
+
+                <div style="position: relative; height: 100px;">
+                    <div class="left" style="margin-left: 66px;">
+                        <h5>First Name</h5>
+                        <input type="text" ng-model="Booking.Hotel.Room.RoomGroup.firstName">
+                    </div>
+                    <div class="right" style="margin-right: 66px;"><h5>Last Name</h5>
+                        <input type="text" ng-model="Booking.Hotel.Room.RoomGroup.lastName"></div>
+
+
+                </div>
+
+                <div>
+                    <div class="left" style="margin-left: 66px;">
+                        <h5>Bed type</h5>
+                        <select ng-model="Booking.Hotel.Room.RoomGroup.bedTypeId">
+                            <option value="13">one double bed</option>
+                            <option value="25">two twin beds</option>
+                        </select>
+                    </div>
+
+                    <div class="right" style="margin-right: 66px;">
+                        <h5>Smooking Preference</h5>
+                        <select ng-model="Booking.Hotel.Room.RoomGroup.smokingPreference">
+                            <option value="1">yes</option>
+                            <option value="0">no</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <hr>
+            <h4>Contact details</h4>
+
+            <h5>Email</h5>
+            <input style="width: 250px" type="text" ng-model="Booking.Reservation.email">
+
+            <h5>Phone</h5>
+            <input type="text" ng-model="Booking.Reservation.homePhone">
+        </fieldset>
+        <fieldset>
+            <h4>Payment details</h4>
+
+            <h5>Credit Card Number</h5>
+            <input type="text" ng-model="Booking.Reservation.creditCardNumber">
+
+            <h5>Credit Card Type</h5>
+            <select ng-model="Booking.Reservation.creditTypeCard">
+                <option value="VI">Visa</option>
+                <option value="MC">MasterCard</option>
+            </select>
+
+            <h5>Expiration Month</h5>
+            <select ng-model="Booking.Reservation.creditCardExpirationMonth">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+
+            <h5>Expiration year</h5>
+            <select ng-model="Booking.Reservation.creditCardExpirationYear">
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+            </select>
+
+            <h5>CCV</h5>
+            <input type="text" ng-model="Booking.Reservation.creditCardIdentifier">
+
+            <h5>Card holder's first name</h5>
+            <input type="text" ng-model="Booking.Reservation.firstName">
+
+            <h5>Card holder's last name</h5>
+            <input tyoe="text" ng-model="Booking.Reservation.lastName">
+        </fieldset>
+        <fieldset>
+            <h4>Address details</h4>
+
+            <h5>Country</h5>
+            <input type="text" ng-model="Booking.Address.countryCode">
+
+            <h5>City</h5>
+            <input type="text" ng-model="Booking.Address.city">
+
+            <h5>Address1</h5>
+            <input type="text" ng-model="Booking.Address.address1">
+
+            <h5>Address2</h5>
+            <input type="text" ng-model="Booking.Address.address2">
+        </fieldset>
+        <fieldset>
+            <input type="checkbox"> I agree with the terms and conditions
+        </fieldset>
+        <button ng-click="BookingS.bookRoom()"> Complete reservation</button>
+    </form>
+</article>

@@ -1,0 +1,463 @@
+/* Main Header */
+html, body {
+    font-family: 'Open Sans Condensed', arial, sans;
+    background: url("../assets/img/boat.jpg");
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    margin: 0 auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.earth {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.earth p {
+    text-align: center;
+}
+
+.logo .text {
+    float: right;
+}
+
+input {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main_header {
+    background: DARKCYAN;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    /*width: 1%;*/
+    /*border-bottom: 5px solid #AAA;*/
+    /*-moz-box-shadow: 0px -5px 13px 7px rgba(25, 25, 25, 0.5);*/
+    /*-webkit-box-shadow: 0px -5px 13px 7px rgba(25, 25, 25, 0.5);*/
+    /*box-shadow: 0px -5px 13px 7px rgba(25, 25, 25, 0.5);*/
+    z-index: 10;
+}
+
+#logo {
+    position: absolute;
+    width: 100%;
+    padding: 0px 0px;
+    width: 10px;
+}
+
+#main_header #main_nav {
+    display: inline-block;
+    float: right;
+}
+
+#nav_home {
+    list-style-type: none;
+}
+
+#nav_home a {
+    text-decoration: none;
+    color: #ff9677;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+button {
+    background: darkgray;
+    width: 125px;
+    color: white;
+    /*border-radius: 10px;*/
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1px;
+    margin: 15px;
+    text-decoration: none;
+    border-radius: 28px;
+}
+
+button:hover {
+    background: #2cbaba;
+    text-decoration: none;
+}
+
+fieldset {
+    border: 0 none;
+}
+
+.form {
+    /*margin-right: auto;*/
+    /*margin-left: auto;*/
+    text-align: center;
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 400px;
+    padding: 30px;
+    margin: 30px;
+    background: rgba(239, 237, 255, 0.7);
+    /*opacity: 0.8;*/
+    box-shadow: 15px 15px 15px rgba(15, 15, 15, 0.41);
+}
+
+/*.destination{*/
+/*margin-left: auto;*/
+/*margin-right: auto;*/
+/*}*/
+/*#destination{*/
+/*margin-left: auto;*/
+/*margin-right: auto;*/
+/*}*/
+
+.ui-datepicker {
+    background: #efedff;
+    color: DARKCYAN;
+}
+
+.ui-datepicker a {
+    text-decoration: none;
+}
+
+.ui-datepicker-header {
+    background: #cd2838;
+    color: white;
+    font-weight: bold;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    line-height: 600%;
+    overflow: hidden;
+}
+
+.ui-datepicker-prev {
+    float: left;
+    background-position: center -30px;
+}
+
+.ui-datepicker-next {
+    float: right;
+    background-position: center 0px;
+}
+
+.ui-datepicker-title {
+    text-align: center;
+}
+
+input {
+    display: inline;
+}
+
+legend {
+    width: inherit;
+    text-align: center;
+    background: #cd2838;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    margin: -30px -30px 30px -30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+
+h3, h4 {
+    font-size: 1.3em;
+    color: DARKCYAN;
+    /*color: black;*/
+    text-align: center
+}
+
+.form input {
+    text-align: center;
+}
+
+.form .input {
+    margin-right: auto;
+    margin-left: auto
+}
+
+.form fieldset {
+    margin-right: auto;
+    margin-left: auto
+}
+
+.form #destination {
+    ext-align: center;
+    width: 300px;
+    height: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form textarea,
+.form select {
+    /*box-sizing: border-box;*/
+    /*-webkit-box-sizing: border-box;*/
+    /*-moz-box-sizing: border-box;*/
+    /*outline: none;*/
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    display: block;
+    width: 150px;
+    border: none;
+    background: white;
+}
+
+.form .submit {
+    text-align: center;
+}
+
+.form .room {
+    border-width: 1px;
+    border-color: white;
+    width: inherit;
+}
+
+.submit button {
+    background: #cd2838;
+    margin: 25px;
+    width: 200px;
+    height: 45px;
+    border-radius: 28px;
+}
+
+.submit button:hover {
+    background: #a3222c;
+}
+
+/*-----List page-----*/
+
+.hotelItem {
+    width: 320px;
+    height: 350px;
+    padding: 2px;
+    background: rgba(239, 237, 255, 0.9);
+    margin: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+
+.hotelItem .hotel-img {
+    float: right;
+    margin: 20px;
+}
+
+.hotelItem .info p {
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.hotelItem .info .name {
+    color: #a3222c;
+    font-size: 1.4em;
+    margin: 20px;
+    text-align: center;
+}
+
+.hotelItem .info .lowRate {
+    text-align: left;
+    font-size: 1em;
+    color: #000000;
+    margin: 20px;
+
+}
+
+.hotelItem .info .location {
+    text-align: left;
+    font-size: 1em;
+    color: #000000;
+    margin: 20px;
+
+}
+
+.hotelItem .info .address {
+    text-align: left;
+    font-size: 1em;
+    color: #000000;
+    margin: 20px;
+
+}
+
+.star-rating {
+    text-align: left;
+    background: url(../../travel_frontend/assets/img/stars.png) no-repeat center top;
+    display: block;
+    height: 20px;
+    width: 109px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rating-0 {
+    margin-left: 10px;
+    background-position: center top;
+}
+
+.rating-1 {
+    margin-left: 10px;
+    background-position: center -20px;
+}
+
+.rating-2 {
+    margin-left: 10px;
+    background-position: center -40px;
+}
+
+.rating-3 {
+    margin-left: 10px;
+    background-position: center -60px;
+}
+
+.rating-4 {
+    margin-left: 10px;
+    background-position: center -80px;
+}
+
+.rating-5 {
+    margin-left: 10px;
+    background-position: center -100px;
+}
+
+button.details {
+    position: absolute;
+    bottom: 10px;
+    /*margin: auto;*/
+}
+
+.info {
+    position: relative;
+    left: 20px;
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    wihth: 400px;
+}
+
+ul li {
+    float: left;
+    display: inline;
+}
+
+/*-----Availability page-----*/
+
+.hotelInfo {
+    /*background: rgba(239, 237, 255, 0.7);*/
+    color: #cd2838;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.roomItem {
+    background: rgba(239, 237, 255, 0.9);
+    width: 320px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.roomTypeDescription {
+    margin: 20px;
+    padding: 10px;
+    font-size: 1em;
+    color: DARKCYAN;
+    font-weight: 900;
+    text-align: center;
+}
+
+.bedChoise {
+    margin: 20px;
+    padding: 10px;
+    font-size: 1em;
+    color: DARKCYAN;
+    font-weight: 900;
+    text-align: left;
+}
+
+.price {
+    color: #cd2838;
+    font-weight: bold
+}
+
+.refundable {
+    margin: 20px;
+    padding: 10px;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    text-align: left;
+}
+
+.nonRefundable {
+    margin: 20px;
+    padding: 10px;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    text-align: left;
+}
+
+.priceInfo {
+    margin: 20px;
+    padding: 10px;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    text-align: left;
+}
+
+.bookingForm {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: rgba(239, 237, 255, 0.9);
+    width: 700px;
+}
+
+hr {
+    width: inherit;
+    color: DARKCYAN;
+    margin: 25px;
+}
+
+.bookingForm textarea,
+.bookingForm select {
+    /*box-sizing: border-box;*/
+    /*-webkit-box-sizing: border-box;*/
+    /*-moz-box-sizing: border-box;*/
+    /*outline: none;*/
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 150px;
+    border: none;
+    background: white;
+}
+
+.roomImages {
+    width: 150px;
+    height: 150px;
+    background: white;
+}

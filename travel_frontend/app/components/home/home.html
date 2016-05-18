@@ -1,0 +1,134 @@
+<article>
+    <div class="form" style="margin-right: auto; margin-left: auto">
+        <form>
+            <legend>Search for Destination</legend>
+            <!-- Input data -->
+            <div class="input">
+                <!-- Destination -->
+                <fieldset ng-controller="HomeController">
+
+                    <h3>Destination</h3>
+                    <input id="destination" type="text" ng-model="List.destination">
+
+                </fieldset>
+                <!-- Check in/out dates -->
+                <fieldset>
+                    <!-- Check in date -->
+                    <div>
+                        <div class="left">
+                            <h4>Check-in</h4>
+                            <input id="check_in" class="date form-control" type="text" ng-model="List.arrivalDate"
+                                   readonly>
+                        </div>
+                        <!-- Check out date -->
+                        <div class="right">
+                            <h4>Check-out</h4>
+                            <input id="check_out" class="date form-control" type="text" ng-model="List.departureDate"
+                                   readonly>
+                        </div>
+                    </div>
+                    <!-- Dateless checkbox -->
+                    <!--<div>-->
+                    <!--<input id="dateless-checkbox" type="checkbox" name="dateless" value="false"-->
+                    <!--ng-model="List.dateless">-->
+
+                    <!--<p class="dateless">Dateless</p>-->
+                    <!--</div>-->
+                </fieldset>
+            </div>
+
+            <!-- Number of guests -->
+            <div>
+                <fieldset class="room" ng-repeat="Room in List.roomGroup">
+
+                    <!-- Adults -->
+                    <div class="left">
+                        <h3>Adults </h3>
+                        <select ng-model="List.roomGroup[$index].adults"
+                                style="margin-right: auto; margin-left: auto width: 200px">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+
+                    <!-- Children -->
+                    <div class="right">
+                        <h3>Children (0-17)</h3>
+                        <select ng-model="List.roomGroup[$index].children"
+                                ng-change="ListS.changeNumberOfChildren($index, List.roomGroup[$index].children)">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    <!-- Children ages -->
+                    <div ng-repeat="Age in List.roomGroup[$index].ages track by $index" class="right">
+                        <h4>Select age</h4>
+                        <select ng-model="List.roomGroup[$parent.$index].ages[$index]">
+                            <option value="0"><1</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                        </select>
+                    </div>
+                    <button ng-click="ListS.removeRoom($index)" ng-show="List.roomGroup.length > 1">Remove room</button>
+                </fieldset>
+            </div>
+
+            <!-- Add room -->
+            <div>
+                <fieldset>
+                    <button ng-click="ListS.addRoom()" ng-show="List.roomGroup.length < 8">Add room</button>
+                </fieldset>
+            </div>
+
+            <!-- Submit -->
+            <div class="submit">
+                <button ng-click="ListS.getHotels()">Find a hotel</button>
+            </div>
+
+
+            <!-- Datepicker -->
+            <script>
+                // Check-in restriction
+                $("#check_in").datepicker({
+                    inline: true,
+                    showOtherMonths: true,
+                    dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                });
+                // Check-out restriction
+                $("#check_out").datepicker({
+                    inline: true,
+                    showOtherMonths: true,
+                    dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                });
+            </script>
+
+        </form>
+    </div>
+</article>
+
+
