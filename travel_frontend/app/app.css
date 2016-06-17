@@ -161,7 +161,7 @@ input {
 }
 
 legend {
-    width: inherit;
+    width: 440px;
     text-align: center;
     background: #cd2838;
     text-transform: uppercase;

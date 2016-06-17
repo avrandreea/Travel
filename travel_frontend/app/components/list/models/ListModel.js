@@ -24,6 +24,7 @@ travelApp.factory("ListModel", function () {
             }
         ],
         roomGroupToString:"",
+        searchingCriteria:"",
     }
     return Data;
 });

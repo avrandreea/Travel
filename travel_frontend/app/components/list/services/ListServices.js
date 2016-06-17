@@ -26,6 +26,17 @@ travelApp.factory("ListServices", function ($http, $location, HotelsModel, ListM
             ListModel.roomGroupToString = roomStr;
         },
 
+        getSearchCriteria: function () {
+            var numberOfAdults = 0;
+            var numberOfChildren = 0;
+            for (i = 0; i < ListModel.roomGroup.length; i++) {
+                numberOfAdults += ListModel.roomGroup.adults;
+                numberOfChildren += ListModel.roomGroup.children;
+            }
+            ListModel.searchingCriteria = "number of rooms" + ListModel.roomGroup.length + ", number of adults: "
+                + numberOfAdults + ", number of children: " + numberOfChildren;
+        },
+
         changeNumberOfChildren: function (roomIndex, newNumberOfChildren) {
             for (i = 0; i < ListModel.roomGroup[roomIndex].children; i++) {
                 ListModel.roomGroup[roomIndex].ages.push(0);
@@ -75,8 +86,7 @@ travelApp.factory("ListServices", function ($http, $location, HotelsModel, ListM
             //    error: function (err) {
             //        console.log(err)
             //    }
-            //})
-
+            //}
 
             /* option 3*/
             $http({
@@ -92,7 +102,6 @@ travelApp.factory("ListServices", function ($http, $location, HotelsModel, ListM
                 }, function errorCallback(response) {
                     console.log(response);
                 })
-
         }
     }
     return Data;

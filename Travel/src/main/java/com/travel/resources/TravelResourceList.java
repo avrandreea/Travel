@@ -29,7 +29,6 @@ public class TravelResourceList {
                             @QueryParam("departureDate") String departureDate,
                             @QueryParam("room1") String room1,
                             @QueryParam("callback") String callback
-
     ) {
 
         /*

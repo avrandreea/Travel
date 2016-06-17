@@ -1,13 +1,17 @@
 package com.travel.client;
 
+import com.travel.TravelConfiguration;
+
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-import java.io.*;
-import java.net.HttpURLConnection;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.math.BigInteger;
 import java.net.URL;
 import java.net.URLConnection;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
 /**
@@ -15,15 +19,37 @@ import java.util.Map;
  */
 public class HttpClient {
 
+    private TravelConfiguration configuration;
+
     private static String constructParams(Map<String, String> params){
         String allParams = "";
+        long timestamp = System.currentTimeMillis()/1000L;
+        //generate the sig
+        String sig = getMD5("7oujbgufhjg3neklao3godv7c5"+"9tsojll5fsqdp"+timestamp);
         for (Map.Entry<String, String> entry : params.entrySet()) {
             if (entry.getValue() != null) {
                 allParams += "&" + entry.getKey() + "=" + entry.getValue();
             }
         }
+        allParams +="&sig="+sig;
         return allParams;
+    }
 
+    public static String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+            // Now we need to zero pad it if you actually want the full 32 chars.
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static String getHttpReguest(String endpoint, String path, String cid, String minorRev, String apiKey, Map<String, String> params) {
@@ -31,8 +57,8 @@ public class HttpClient {
         String result = "";
         URL url;
         try {
-            //"?cid=55505&minorRev=99&apiKey=custom"
             url = new URL(endpoint + path +"?"+ cid + "&" + minorRev + "&" + apiKey + constructParams(params));
+            System.out.println(endpoint + path +"?"+ cid + "&" + minorRev + "&" + apiKey + constructParams(params));
 
             //make connection
             URLConnection urlc = url.openConnection();
@@ -87,7 +113,6 @@ public class HttpClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return result;
     }
 }

@@ -39,6 +39,7 @@ public class TravelConfiguration extends Configuration {
         private String cid;
         private String minorRev;
         private String apiKey;
+        private String sharedSecret;
 
         @JsonProperty
         public String getEndpoint() {
@@ -79,5 +80,11 @@ public class TravelConfiguration extends Configuration {
         public String getApiKey() {
             return apiKey;
         }
+
+        @JsonProperty
+        public String getSharedSecret(){
+            return sharedSecret;
+        }
+
     }
 }

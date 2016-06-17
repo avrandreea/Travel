@@ -1,9 +1,10 @@
 <!-- Hotells List -->
 <article>
-
+    <div>
+        <div>Hotels in: {{List.destination}} from {{List.arrivalDate}} to {{List.departureDate}}, number of rooms: {{List.roomGroup.size}}</div>
+    </div>
     <ul class="hotelItemsContainer">
         <li style="position: relative" class="hotelItem" ng-repeat="Hotel in Hotels.list.HotelListResponse.HotelList.HotelSummary track by $index">
-
             <!-- Hotel image -->
             <div class="hotel-img">
                 <img ng-src="http://images.travelnow.com/{{Hotel.thumbNailUrl}}" alt="Hotel thumbNail"/>

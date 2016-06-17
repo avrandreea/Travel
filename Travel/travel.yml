@@ -52,6 +52,8 @@ restConfig:
   listPath: list
   availPath: avail
   bookingPath: res
-  cid: cid=55505
-  minorRev: minorRev=99
-  apiKey: apiKey=custom
+  cid: cid=496271
+  minorRev: minorRev=30
+  apiKey: apiKey=7oujbgufhjg3neklao3godv7c5
+  sharedSecret: 9tsojll5fsqdp;
+
